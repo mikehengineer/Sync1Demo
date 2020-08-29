@@ -37,6 +37,11 @@
                     <span class="glyphicon glyphicon-star" aria-hidden="true">View</span>
                 </a>
                 <a class="btn  btn-sm btn-dark"
+                   asp-page="./ApplicantEdit"
+                   asp-route-applicantId="@applicant.Id">
+                    <span class="glyphicon glyphicon-star" aria-hidden="true">Edit</span>
+                </a>
+                <a class="btn  btn-sm btn-dark"
                    asp-page="./ApplicantDelete"
                    asp-route-applicantId="@applicant.Id">
                     <span class="glyphicon glyphicon-star" aria-hidden="true">Delete</span>

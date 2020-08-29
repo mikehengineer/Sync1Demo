@@ -14,7 +14,7 @@ namespace Sync1Demo.Data.Migrations
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(nullable: true),
                     Email = table.Column<string>(nullable: true),
-                    PhoneNumber = table.Column<long>(nullable: false),
+                    PhoneNumber = table.Column<string>(nullable: false),
                     LoanAmount = table.Column<long>(nullable: false)
                 },
                 constraints: table =>

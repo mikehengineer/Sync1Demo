@@ -6,13 +6,20 @@
 
 <div class="card" style="width: 18rem;">
     <ul class="list-group list-group-flush">
-        <li class="list-group-item">@Model.Applicant.Name</li>
+        <li class="list-group-item">Name: @Model.Applicant.Name</li>
+        <li class="list-group-item">Email: @Model.Applicant.Email</li>
+        <li class="list-group-item">Phone Number: @Model.Applicant.PhoneNumber</li>
+        <li class="list-group-item">Loan Amount: @Model.Applicant.LoanAmount</li>
     </ul>
 </div>
+<br />
+<br />
+<br />
+<br />
 <form method="post">
     <input type="hidden" asp-for=Applicant.Id />
     <div class="form-group">
-        <label asp-for=Applicant.Name>@Model.Applicant.Name</label>
+        <label asp-for=Applicant.Name>Name</label>
         <input asp-for=Applicant.Name class="form-control" type="text">
     </div>
     <div class="form-group">
@@ -29,4 +36,5 @@
     </div>
 
     <button asp-route-applicantId=Applicant.Id type="submit" class="btn btn-dark">Submit</button>
+    <button asp-page="./ApplicantEdit" class="btn btn-dark">Applicant List</button>
 </form>
