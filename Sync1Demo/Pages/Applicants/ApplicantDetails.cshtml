@@ -1,0 +1,19 @@
+﻿@page "{applicantId}"
+@model Sync1Demo.Pages.Applicants.ApplicantDetailsModel
+@{
+}
+
+<h2>@Model.Applicant.Name</h2>
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Model.Applicant.Name</li>
+        <li class="list-group-item">@Model.Applicant.Email</li>
+        <li class="list-group-item">@Model.Applicant.PhoneNumber</li>
+        <li class="list-group-item">@Model.Applicant.LoanAmount</li>
+    </ul>
+    <a class="btn  btn-sm btn-dark"
+       asp-page="./ApplicantEdit"
+       asp-route-applicantId="@Model.Applicant.Id">
+        <span class="glyphicon glyphicon-star" aria-hidden="true">Edit</span>
+    </a>
+</div>

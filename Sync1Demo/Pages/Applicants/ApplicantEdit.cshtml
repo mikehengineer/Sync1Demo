@@ -1,0 +1,32 @@
+﻿@page "{applicantId}"
+@model Sync1Demo.Pages.Applicants.EditModel
+@{
+}
+
+
+<div class="card" style="width: 18rem;">
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item">@Model.Applicant.Name</li>
+    </ul>
+</div>
+<form method="post">
+    <input type="hidden" asp-for=Applicant.Id />
+    <div class="form-group">
+        <label asp-for=Applicant.Name>@Model.Applicant.Name</label>
+        <input asp-for=Applicant.Name class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label asp-for=Applicant.Email>Email</label>
+        <input asp-for=Applicant.Email class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label asp-for=Applicant.PhoneNumber>Phone Number</label>
+        <input asp-for=Applicant.PhoneNumber class="form-control" type="text">
+    </div>
+    <div class="form-group">
+        <label asp-for=Applicant.LoanAmount>Loan Amount</label>
+        <input asp-for=Applicant.LoanAmount class="form-control" type="text">
+    </div>
+
+    <button asp-route-applicantId=Applicant.Id type="submit" class="btn btn-dark">Submit</button>
+</form>

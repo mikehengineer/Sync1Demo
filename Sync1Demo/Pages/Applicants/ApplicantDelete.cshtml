@@ -1,0 +1,11 @@
+﻿@page "{applicantId}"
+@model Sync1Demo.Pages.Applicants.ApplicantDeleteModel
+
+<h2>Delete Applicant</h2>
+<div class="alert alert-danger">
+    Are you sure you want to delete @Model.Applicant.Name?
+</div>
+<form method="post">
+    <button type="submit" class="btn btn-danger">Yes</button>
+    <a asp-page="ApplicantList" class="btn btn-dark">Cancel</a>
+</form>
