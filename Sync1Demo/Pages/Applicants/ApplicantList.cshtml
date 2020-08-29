@@ -21,11 +21,14 @@
 </form>
 
 <table class="table">
+    @{
+        var tableIndexer = 1;
+     }
 
     @foreach (var applicant in Model.Applicants)
     {
         <tr>
-            <td>@applicant.Id</td>
+            <td>@tableIndexer</td>
             <td>@applicant.Name</td>
             <td>@applicant.Email</td>
             <td>@applicant.PhoneNumber</td>
@@ -48,6 +51,7 @@
                 </a>
             </td>
         </tr>
+        tableIndexer++;
     }
 </table>
 <a asp-page="./ApplicantCreate" class="btn btn-primary">Add New</a>

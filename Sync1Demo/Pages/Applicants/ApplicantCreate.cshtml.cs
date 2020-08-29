@@ -28,7 +28,7 @@ namespace Sync1Demo.Pages.Applicants
         {
             applicant.Add(Applicant);
                 applicant.Commit();
-            return RedirectToPage("./ApplicantDetails", new { applicantId = Applicant.Id });
+            return RedirectToPage("./ApplicantList");
         }
     }
 }
