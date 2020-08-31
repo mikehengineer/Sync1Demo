@@ -11,6 +11,6 @@ namespace Sync1Demo.Core
         public String Name { get; set; }
         public String Email { get; set; }
         public String PhoneNumber { get; set; }
-        public long LoanAmount { get; set; }
+        public String LoanAmount { get; set; }
     }
 }
