@@ -26,7 +26,14 @@ namespace Sync1Demo.Api
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Applicant>>> GetApplicants()
         {
-            return await _context.Applicants.ToListAsync();
+            var applicantCollection = await _context.Applicants.ToListAsync();
+
+            var applicantFilter = from applicant in applicantCollection
+                                  where !(applicant.SoftDelete.Equals("true"))
+                                  select applicant;
+
+            //Cannot cast IEnumerable to ActionResult IEnumerable, more found at: https://github.com/aspnet/Mvc/issues/8061
+            return applicantFilter.ToList();
         }
 
         // GET: api/Applicants/5
@@ -96,10 +103,12 @@ namespace Sync1Demo.Api
             {
                 return NotFound();
             }
-
-            _context.Applicants.Remove(applicant);
-            await _context.SaveChangesAsync();
-
+            else
+            {
+                _context.Applicants.Remove(applicant);
+                await _context.SaveChangesAsync();
+            }
+          
             return applicant;
         }
 

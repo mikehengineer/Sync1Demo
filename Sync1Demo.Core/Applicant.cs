@@ -12,5 +12,6 @@ namespace Sync1Demo.Core
         public String Email { get; set; }
         public String PhoneNumber { get; set; }
         public String LoanAmount { get; set; }
+        public String SoftDelete { get; set; }
     }
 }
